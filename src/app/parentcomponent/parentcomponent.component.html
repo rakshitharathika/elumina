@@ -1,0 +1,38 @@
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource">
+
+  
+    <ng-container matColumnDef="region">
+      <th mat-header-cell *matHeaderCellDef> Region </th>
+      <td mat-cell *matCellDef="let element"> {{element.region}} </td>
+    </ng-container>
+
+    
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+   
+    <ng-container matColumnDef="demonym">
+      <th mat-header-cell *matHeaderCellDef> Demonym </th>
+      <td mat-cell *matCellDef="let element"> {{element.demonym}} </td>
+    </ng-container>
+
+   
+    <ng-container matColumnDef="nativeName">
+      <th mat-header-cell *matHeaderCellDef> NativeName </th>
+      <td mat-cell *matCellDef="let element"> {{element.nativeName}} </td>
+    </ng-container>
+<ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef> Action </th>
+      <td mat-cell *matCellDef="let element"><button mat-button class="btn btn-primary"  (click)="preview(element)">preview</button> </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
+
+
